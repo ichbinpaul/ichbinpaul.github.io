@@ -481,10 +481,143 @@
             color: var(--text-dim);
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--dark);
+        }
+
+        .testimonials-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            background: var(--dark-light);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info {
+            text-align: left;
+        }
+
+        .testimonial-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-arrow {
+            background: var(--dark-light);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.3);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .testimonial-dot.active {
+            background: var(--accent);
+        }
+
         /* Contact Section */
         .contact {
             padding: 6rem 0;
-            background: var(--dark);
+            background: var(--dark-light);
             text-align: center;
         }
 
@@ -545,7 +678,7 @@
 
         /* Footer */
         footer {
-            background: var(--dark-light);
+            background: var(--dark);
             padding: 3rem 0;
             border-top: 1px solid rgba(139, 92, 246, 0.2);
         }
@@ -645,6 +778,19 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
+
+            .testimonial-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -673,6 +819,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -721,7 +868,6 @@
         </div>
     </section>
 
-    <!-- Rest of the code remains exactly the same as before -->
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -900,6 +1046,140 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+                Don't just take our word for it. Here's what our satisfied clients have to say about working with Paulo's Lab.
+            </p>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Paulo's Lab transformed our e-commerce platform with a custom mobile app. The results were incredible - our sales increased by 45% in just three months. Their attention to detail and understanding of our business needs was exceptional.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">BO</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Brian O.</div>
+                                    <div class="testimonial-role">E-commerce Business Owner</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">The SEO strategy Paulo's Lab implemented for our restaurant completely changed our online presence. We're now ranking #1 for key search terms in Mombasa, and our reservations have doubled. Highly recommended!</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">SK</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Sharon K.</div>
+                                    <div class="testimonial-role">Restaurant Owner</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">As a logistics company, we needed a custom tracking system. Paulo's Lab delivered beyond our expectations. The software is robust, user-friendly, and has streamlined our entire operation.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MK</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Mohammed K.</div>
+                                    <div class="testimonial-role">Logistics Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">The inventory management system Paulo's Lab built for our retail chain has saved us countless hours and reduced errors by 90%. Their ongoing support has been responsive and professional.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">PM</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Peter M.</div>
+                                    <div class="testimonial-role">Retail Chain Owner</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Working with Paulo's Lab on our educational platform was a game-changer. They understood our vision and created an intuitive, scalable solution that our students love using every day.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">DO</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Daisy O.</div>
+                                    <div class="testimonial-role">Education Director</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">The custom CRM system Paulo's Lab developed has revolutionized how we manage client relationships. It's exactly what we needed, and their team was fantastic to work with throughout the process.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MH</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Michael H.</div>
+                                    <div class="testimonial-role">Sales Director</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Our healthcare app needed to be both secure and user-friendly. Paulo's Lab delivered on both fronts perfectly. The app has received excellent feedback from both patients and medical staff.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">JA</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Josephine A.</div>
+                                    <div class="testimonial-role">Healthcare Administrator</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 8 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">The real estate management software Paulo's Lab created for us has automated processes we didn't even know could be automated. Their innovative approach and technical expertise are impressive.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">AM</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-name">Aron M.</div>
+                                    <div class="testimonial-role">Real Estate Developer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <button class="carousel-arrow prev" id="testimonialPrev">‹</button>
+                    <div class="carousel-dots" id="testimonialDots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                    <button class="carousel-arrow next" id="testimonialNext">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -957,6 +1237,7 @@
                     <h3>Company</h3>
                     <a href="#about">About Us</a>
                     <a href="#services">Our Services</a>
+                    <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-section">
@@ -1018,42 +1299,104 @@
                 }
             });
 
-            // Carousel functionality
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.carousel-dot');
-            const slideCount = slides.length;
+            // Hero Carousel functionality
+            let currentHeroSlide = 0;
+            const heroSlides = document.querySelectorAll('.carousel-slide');
+            const heroDots = document.querySelectorAll('.carousel-dot');
+            const heroSlideCount = heroSlides.length;
 
-            function showSlide(n) {
-                // Remove active class from all slides and dots
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
+            function showHeroSlide(n) {
+                heroSlides.forEach(slide => slide.classList.remove('active'));
+                heroDots.forEach(dot => dot.classList.remove('active'));
                 
-                // Add active class to current slide and dot
-                slides[n].classList.add('active');
-                dots[n].classList.add('active');
+                heroSlides[n].classList.add('active');
+                heroDots[n].classList.add('active');
                 
-                currentSlide = n;
+                currentHeroSlide = n;
             }
 
-            // Auto-advance carousel every 5 seconds
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slideCount;
-                showSlide(currentSlide);
+            function nextHeroSlide() {
+                currentHeroSlide = (currentHeroSlide + 1) % heroSlideCount;
+                showHeroSlide(currentHeroSlide);
             }
 
-            // Add click events to dots
-            dots.forEach((dot, index) => {
+            heroDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
-                    showSlide(index);
+                    showHeroSlide(index);
                 });
             });
 
-            // Start auto-advance
-            setInterval(nextSlide, 5000);
+            setInterval(nextHeroSlide, 5000);
+            showHeroSlide(0);
 
-            // Initialize first slide
-            showSlide(0);
+            // Testimonials Carousel functionality
+            const testimonialsTrack = document.getElementById('testimonialsTrack');
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const testimonialPrev = document.getElementById('testimonialPrev');
+            const testimonialNext = document.getElementById('testimonialNext');
+            const testimonialDots = document.getElementById('testimonialDots');
+            
+            let currentTestimonial = 0;
+            const totalTestimonials = testimonialSlides.length;
+            let autoSlideInterval;
+
+            // Create dots
+            testimonialSlides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'testimonial-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToTestimonial(index));
+                testimonialDots.appendChild(dot);
+            });
+
+            const testimonialDotElements = document.querySelectorAll('.testimonial-dot');
+
+            function updateTestimonialPosition() {
+                testimonialsTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+                testimonialDotElements.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentTestimonial);
+                });
+            }
+
+            function goToTestimonial(index) {
+                currentTestimonial = index;
+                updateTestimonialPosition();
+                resetAutoSlide();
+            }
+
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+                updateTestimonialPosition();
+            }
+
+            function prevTestimonial() {
+                currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+                updateTestimonialPosition();
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextTestimonial, 6000); // Change every 6 seconds
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            // Event listeners
+            testimonialPrev.addEventListener('click', () => {
+                prevTestimonial();
+                resetAutoSlide();
+            });
+
+            testimonialNext.addEventListener('click', () => {
+                nextTestimonial();
+                resetAutoSlide();
+            });
+
+            // Initialize
+            updateTestimonialPosition();
+            startAutoSlide();
         });
     </script>
 </body>
