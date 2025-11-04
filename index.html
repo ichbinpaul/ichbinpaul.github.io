@@ -1262,7 +1262,7 @@
                         <span class="hero-badge" onclick="scrollToService('seo-marketing')">📈 SEO Strategy</span>
                     </div>
                     
-                    <a href="https://wa.me/254715875933?text=Hi%20Paulo!%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20software%20development%20services.%20Can%20we%20discuss%20my%20project%20requirements%20and%20get%20a%20quote?" target="_blank" class="cta-button" id="startProjectBtn">Start Your Project</a>
+                    <a href="https://wa.me/254715875933?text=Hi%20Paulo!%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20software%20development%20services.%20Can%20we%20discuss%20my%20project%20requirements%20and%20get%20a%20quote?" target="_blank" class="cta-button">Start Your Project</a>
                 </div>
             </div>
         </div>
@@ -2026,23 +2026,6 @@
     <script>
         // Simple and reliable smooth scrolling
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the button
-            const startProjectBtn = document.getElementById('startProjectBtn');
-            
-            // Add click event to the button
-            if (startProjectBtn) {
-                startProjectBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            }
-
             // Smooth scrolling for navigation links
             document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
