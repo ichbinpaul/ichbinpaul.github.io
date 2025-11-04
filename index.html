@@ -100,7 +100,7 @@
             color: var(--primary);
         }
 
-        /* Hero Section - Updated for Full Background Carousel & Centered Content */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -110,50 +110,7 @@
             overflow: hidden;
             padding-top: 80px;
             text-align: center;
-        }
-
-        .hero-carousel {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        .carousel-slide-1 {
-            background-image: url('images/hero-image.webp');
-        }
-
-        .carousel-slide-2 {
-            background-image: url('images/hero-image1.webp');
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.7);
-            z-index: 2;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
         }
 
         .hero-content {
@@ -182,7 +139,6 @@
             font-size: 1.3rem;
             color: var(--text);
             margin-bottom: 2rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-badges {
@@ -222,30 +178,6 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
-        }
-
-        /* Carousel Controls */
-        .carousel-controls {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 4;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: var(--accent);
         }
 
         /* Background Animation */
@@ -310,12 +242,12 @@
             border-radius: 20px;
             border: 2px solid rgba(245, 158, 11, 0.3);
             overflow: hidden;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
         }
 
         .about-text h2 {
@@ -452,17 +384,12 @@
             height: 300px;
             position: relative;
             overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
         }
 
         .project-image-overlay {
@@ -560,6 +487,35 @@
             border-radius: 15px;
             font-size: 0.8rem;
             border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
         }
 
         .projects-nav {
@@ -1039,28 +995,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Carousel -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Background Carousel -->
-        <div class="hero-carousel">
-            <div class="carousel-slide carousel-slide-1 active"></div>
-            <div class="carousel-slide carousel-slide-2"></div>
-        </div>
-        
-        <!-- Overlay for better text readability -->
-        <div class="hero-overlay"></div>
-        
         <!-- Background Animation -->
         <div class="bg-animation">
             <div class="floating-shape shape1"></div>
             <div class="floating-shape shape2"></div>
             <div class="floating-shape shape3"></div>
-        </div>
-        
-        <!-- Carousel Controls -->
-        <div class="carousel-controls">
-            <div class="carousel-dot active" data-slide="0"></div>
-            <div class="carousel-dot" data-slide="1"></div>
         </div>
 
         <div class="container">
@@ -1087,7 +1028,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/about-image.webp" alt="About Paulo's Lab - Software Development Team" loading="lazy">
+                    About Paulo's Lab
                 </div>
                 <div class="about-text">
                     <h2>About Paulo's Lab</h2>
@@ -1198,9 +1139,9 @@
                     <div class="project-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/NiaUpeoni.png" alt="Nia Upeoni E-Learning Platform" loading="lazy">
+                                Nia Upeoni
                                 <div class="project-image-overlay">
-                                    <a href="#" class="view-project">View Project</a>
+                                    <a href="https://niaupeoni.org" target="_blank" class="view-project">View Live Site</a>
                                 </div>
                             </div>
                             <div class="project-info">
@@ -1222,6 +1163,11 @@
                                     <span class="tech-tag">MongoDB</span>
                                     <span class="tech-tag">Express</span>
                                 </div>
+                                <div class="project-links">
+                                    <a href="https://niaupeoni.org" target="_blank" class="project-link">
+                                        <span>🌐</span> Live Site
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1230,9 +1176,9 @@
                     <div class="project-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/TaqoLaqo.png" alt="Taqo Laqo Clothing Accessories Shop" loading="lazy">
+                                Taqo Laqo
                                 <div class="project-image-overlay">
-                                    <a href="#" class="view-project">View Project</a>
+                                    <a href="https://taqolaqo.com" target="_blank" class="view-project">View Live Site</a>
                                 </div>
                             </div>
                             <div class="project-info">
@@ -1254,6 +1200,11 @@
                                     <span class="tech-tag">Firebase</span>
                                     <span class="tech-tag">Material-UI</span>
                                 </div>
+                                <div class="project-links">
+                                    <a href="https://taqolaqo.com" target="_blank" class="project-link">
+                                        <span>🌐</span> Live Site
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1262,9 +1213,9 @@
                     <div class="project-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Greatminds.png" alt="Greatminds Challenge - Entrepreneur Coaching" loading="lazy">
+                                Greatminds Challenge
                                 <div class="project-image-overlay">
-                                    <a href="#" class="view-project">View Project</a>
+                                    <a href="https://gr8-minds.com" target="_blank" class="view-project">View Live Site</a>
                                 </div>
                             </div>
                             <div class="project-info">
@@ -1286,6 +1237,11 @@
                                     <span class="tech-tag">MySQL</span>
                                     <span class="tech-tag">JavaScript</span>
                                 </div>
+                                <div class="project-links">
+                                    <a href="https://gr8-minds.com" target="_blank" class="project-link">
+                                        <span>🌐</span> Live Site
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1294,9 +1250,9 @@
                     <div class="project-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Kenyatronics.png" alt="Kenyatronics Electronics Shop - SEO" loading="lazy">
+                                Kenyatronics
                                 <div class="project-image-overlay">
-                                    <a href="#" class="view-project">View Project</a>
+                                    <a href="https://kenyatronics.com" target="_blank" class="view-project">View Live Site</a>
                                 </div>
                             </div>
                             <div class="project-info">
@@ -1318,6 +1274,11 @@
                                     <span class="tech-tag">Keyword Research</span>
                                     <span class="tech-tag">On-page SEO</span>
                                 </div>
+                                <div class="project-links">
+                                    <a href="https://kenyatronics.com" target="_blank" class="project-link">
+                                        <span>🌐</span> Live Site
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1326,9 +1287,9 @@
                     <div class="project-slide">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Hisense.jpeg" alt="Hisense Kenya - Product Optimization" loading="lazy">
+                                Hisense Kenya
                                 <div class="project-image-overlay">
-                                    <a href="#" class="view-project">View Project</a>
+                                    <a href="https://hisenseke.co.ke" target="_blank" class="view-project">View Live Site</a>
                                 </div>
                             </div>
                             <div class="project-info">
@@ -1349,6 +1310,11 @@
                                     <span class="tech-tag">Structured Data</span>
                                     <span class="tech-tag">CRO</span>
                                     <span class="tech-tag">Performance</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://hisenseke.co.ke" target="_blank" class="project-link">
+                                        <span>🌐</span> Live Site
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1521,48 +1487,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Testimonial 6 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">The custom CRM system Paulo's Lab developed has revolutionized how we manage client relationships. It's exactly what we needed, and their team was fantastic to work with throughout the process.</p>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">MH</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Michael H.</div>
-                                    <div class="testimonial-role">Sales Director</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 7 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">Our healthcare app needed to be both secure and user-friendly. Paulo's Lab delivered on both fronts perfectly. The app has received excellent feedback from both patients and medical staff.</p>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">JA</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Josephine A.</div>
-                                    <div class="testimonial-role">Healthcare Administrator</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 8 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">The real estate management software Paulo's Lab created for us has automated processes we didn't even know could be automated. Their innovative approach and technical expertise are impressive.</p>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">AM</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Aron M.</div>
-                                    <div class="testimonial-role">Real Estate Developer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="carousel-nav">
@@ -1695,36 +1619,6 @@
                     nav.style.boxShadow = 'none';
                 }
             });
-
-            // Hero Carousel functionality
-            let currentHeroSlide = 0;
-            const heroSlides = document.querySelectorAll('.carousel-slide');
-            const heroDots = document.querySelectorAll('.carousel-dot');
-            const heroSlideCount = heroSlides.length;
-
-            function showHeroSlide(n) {
-                heroSlides.forEach(slide => slide.classList.remove('active'));
-                heroDots.forEach(dot => dot.classList.remove('active'));
-                
-                heroSlides[n].classList.add('active');
-                heroDots[n].classList.add('active');
-                
-                currentHeroSlide = n;
-            }
-
-            function nextHeroSlide() {
-                currentHeroSlide = (currentHeroSlide + 1) % heroSlideCount;
-                showHeroSlide(currentHeroSlide);
-            }
-
-            heroDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showHeroSlide(index);
-                });
-            });
-
-            setInterval(nextHeroSlide, 5000);
-            showHeroSlide(0);
 
             // Testimonials Carousel functionality
             const testimonialsTrack = document.getElementById('testimonialsTrack');
