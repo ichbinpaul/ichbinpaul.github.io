@@ -409,9 +409,9 @@
             font-weight: bold;
         }
 
-        /* Featured Projects Section */
+        /* Featured Projects Section - Updated */
         .featured-projects {
-            padding: 6rem 0;
+            padding: 4rem 0; /* Reduced padding */
             background: var(--dark);
         }
 
@@ -433,8 +433,6 @@
 
         .project-slide {
             min-width: 100%;
-            display: flex;
-            gap: 2rem;
             padding: 1rem;
         }
 
@@ -444,9 +442,10 @@
             overflow: hidden;
             border: 1px solid rgba(139, 92, 246, 0.2);
             transition: transform 0.3s, border-color 0.3s;
-            flex: 1;
             display: flex;
             flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .project-card:hover {
@@ -456,7 +455,7 @@
 
         .project-image {
             width: 100%;
-            height: 200px;
+            height: 250px; /* Reduced height */
             position: relative;
             overflow: hidden;
         }
@@ -524,7 +523,7 @@
         }
 
         .project-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--text);
             margin-bottom: 1rem;
             font-weight: 600;
@@ -1039,10 +1038,6 @@
                 height: 40px;
             }
 
-            .project-slide {
-                flex-direction: column;
-            }
-
             .project-image {
                 height: 200px;
             }
@@ -1230,7 +1225,7 @@
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
+    <!-- Featured Projects Section - Updated -->
     <section id="featured-projects" class="featured-projects">
         <div class="container">
             <div class="projects-container">
@@ -1241,9 +1236,8 @@
                 
                 <div class="projects-carousel">
                     <div class="projects-track" id="projectsTrack">
-                        <!-- Slide 1: Nia Upeoni & Taqo Laqo -->
+                        <!-- Project 1: Nia Upeoni -->
                         <div class="project-slide">
-                            <!-- Project 1: Nia Upeoni -->
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="images/NiaUpeoni.png" alt="Nia Upeoni E-Learning Platform" loading="lazy">
@@ -1261,11 +1255,14 @@
                                         <li>Student registration and login system</li>
                                         <li>Course management and progress tracking</li>
                                         <li>Interactive learning materials</li>
+                                        <li>Secure payment integration</li>
+                                        <li>Mobile-responsive design</li>
                                     </ul>
                                     <div class="project-tech">
                                         <span class="tech-tag">React</span>
                                         <span class="tech-tag">Node.js</span>
                                         <span class="tech-tag">MongoDB</span>
+                                        <span class="tech-tag">Express</span>
                                     </div>
                                     <div class="project-links">
                                         <a href="https://niaupeoni.org" target="_blank" class="project-link">
@@ -1274,8 +1271,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Project 2: Taqo Laqo -->
+                        </div>
+                        
+                        <!-- Project 2: Taqo Laqo -->
+                        <div class="project-slide">
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="images/TaqoLaqo.png" alt="Taqo Laqo Clothing Accessories Shop" loading="lazy">
@@ -1293,11 +1292,14 @@
                                         <li>Product catalog with advanced filtering</li>
                                         <li>Shopping cart and wishlist functionality</li>
                                         <li>Secure payment gateway integration</li>
+                                        <li>Order tracking system</li>
+                                        <li>Admin dashboard for inventory management</li>
                                     </ul>
                                     <div class="project-tech">
                                         <span class="tech-tag">React</span>
                                         <span class="tech-tag">Stripe API</span>
                                         <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">Material-UI</span>
                                     </div>
                                     <div class="project-links">
                                         <a href="https://taqolaqo.com" target="_blank" class="project-link">
@@ -1308,9 +1310,8 @@
                             </div>
                         </div>
                         
-                        <!-- Slide 2: Greatminds Challenge & Kenyatronics -->
+                        <!-- Project 3: Greatminds Challenge -->
                         <div class="project-slide">
-                            <!-- Project 3: Greatminds Challenge -->
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="images/Greatminds.png" alt="Greatminds Challenge - Entrepreneur Coaching" loading="lazy">
@@ -1328,11 +1329,14 @@
                                         <li>Service package showcase</li>
                                         <li>Online booking and scheduling system</li>
                                         <li>Client success stories and testimonials</li>
+                                        <li>Blog and resource center</li>
+                                        <li>Contact and inquiry forms</li>
                                     </ul>
                                     <div class="project-tech">
                                         <span class="tech-tag">WordPress</span>
                                         <span class="tech-tag">PHP</span>
                                         <span class="tech-tag">MySQL</span>
+                                        <span class="tech-tag">JavaScript</span>
                                     </div>
                                     <div class="project-links">
                                         <a href="https://gr8-minds.com" target="_blank" class="project-link">
@@ -1341,8 +1345,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Project 4: Kenyatronics -->
+                        </div>
+                        
+                        <!-- Project 4: Kenyatronics -->
+                        <div class="project-slide">
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="images/Kenyatronics.png" alt="Kenyatronics Electronics Shop - SEO" loading="lazy">
@@ -1360,11 +1366,14 @@
                                         <li>Technical SEO audit and optimization</li>
                                         <li>Product page optimization</li>
                                         <li>Local SEO implementation</li>
+                                        <li>Content strategy development</li>
+                                        <li>Performance monitoring and analytics</li>
                                     </ul>
                                     <div class="project-tech">
                                         <span class="tech-tag">SEO Audit</span>
                                         <span class="tech-tag">Google Analytics</span>
                                         <span class="tech-tag">Keyword Research</span>
+                                        <span class="tech-tag">On-page SEO</span>
                                     </div>
                                     <div class="project-links">
                                         <a href="https://kenyatronics.com" target="_blank" class="project-link">
@@ -1375,9 +1384,8 @@
                             </div>
                         </div>
                         
-                        <!-- Slide 3: Hisense Kenya & Extra Space -->
+                        <!-- Project 5: Hisense Kenya -->
                         <div class="project-slide">
-                            <!-- Project 5: Hisense Kenya -->
                             <div class="project-card">
                                 <div class="project-image">
                                     <img src="images/Hisense.jpeg" alt="Hisense Kenya - Product Optimization" loading="lazy">
@@ -1395,11 +1403,14 @@
                                         <li>Product description optimization</li>
                                         <li>Structured data implementation</li>
                                         <li>Image optimization and compression</li>
+                                        <li>Conversion rate optimization</li>
+                                        <li>Competitor analysis and strategy</li>
                                     </ul>
                                     <div class="project-tech">
                                         <span class="tech-tag">Technical SEO</span>
                                         <span class="tech-tag">Structured Data</span>
                                         <span class="tech-tag">CRO</span>
+                                        <span class="tech-tag">Performance</span>
                                     </div>
                                     <div class="project-links">
                                         <a href="https://hisenseke.co.ke" target="_blank" class="project-link">
@@ -1408,9 +1419,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Empty card for layout consistency -->
-                            <div class="project-card" style="visibility: hidden;"></div>
                         </div>
                     </div>
                     
