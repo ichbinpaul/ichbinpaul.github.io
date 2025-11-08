@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paulo's Lab - Expert Software Development & SEO Services in Kenya. Custom software solutions, mobile apps, web applications, and strategic SEO services to grow your business online.">
-    <meta name="keywords" content="software development, SEO services, mobile app development, web applications, custom software, digital marketing, search engine optimization, Kenya software developer, Mombasa developer">
+    <meta name="description" content="Paulo's Lab - Expert Software Development & SEO Services. Custom software solutions, mobile apps, web applications, and strategic SEO services for global businesses.">
+    <meta name="keywords" content="software development, SEO services, mobile app development, web applications, custom software, digital marketing, search engine optimization, software developer, web developer, app developer">
     <meta name="author" content="Paulo's Lab">
     
     <!-- Updated canonical URL -->
     <link rel="canonical" href="https://pauloslab.com">
     
-    <title>Paulo's Lab | Professional Software Development & SEO Services in Kenya</title>
+    <title>Paulo's Lab | Professional Software Development & SEO Services</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238B5CF6;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23F59E0B;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='%230f172a' rx='20'/%3E%3Cg transform='translate(50, 50)'%3E%3Cpath d='M -12,-30 L -12,-10 L -18,10 Q -18,20 -12,25 L 12,25 Q 18,20 18,10 L 12,-10 L 12,-30 Z' fill='url(%23grad)'/%3E%3Crect x='-8' y='-35' width='16' height='5' fill='url(%23grad)'/%3E%3Cpath d='M -12,5 L -15,15 Q -15,21 -10,23 L 10,23 Q 15,21 15,15 L 12,5 Z' fill='%23F59E0B' opacity='0.7'/%3E%3Ctext x='-20' y='5' font-family='monospace' font-size='18' fill='%2306b6d4' font-weight='bold'%3E%26lt;/%26gt;%3C/text%3E%3C/g%3E%3C/svg%3E">
     
-    <!-- Updated Open Graph Meta Tags -->
-    <meta property="og:title" content="Paulo's Lab | Professional Software Development & SEO Services in Kenya">
-    <meta property="og:description" content="Transform your business with custom software solutions. Mobile apps, web applications, desktop software, and strategic SEO services in Kenya.">
+    <!-- Updated Open Graph Meta Tags for Global Audience -->
+    <meta property="og:title" content="Paulo's Lab | Professional Software Development & SEO Services">
+    <meta property="og:description" content="Transform your business with custom software solutions. Mobile apps, web applications, desktop software, and strategic SEO services for global businesses.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pauloslab.com">
     <meta property="og:image" content="https://pauloslab.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Paulo's Lab">
     
     <!-- Updated Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Paulo's Lab | Software Development & SEO Services">
-    <meta name="twitter:description" content="Custom software solutions and SEO services in Kenya. Mobile apps, web applications, and digital marketing.">
+    <meta name="twitter:description" content="Custom software solutions and SEO services for global businesses. Mobile apps, web applications, and digital marketing.">
     <meta name="twitter:image" content="https://pauloslab.com/images/twitter-image.jpg">
+    <meta name="twitter:creator" content="@pauloslab">
 
     <style>
         * {
@@ -88,6 +90,7 @@
             color: var(--text);
             text-decoration: none;
             cursor: pointer;
+            z-index: 1001;
         }
 
         .logo:hover {
@@ -104,6 +107,28 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--text);
+            border-radius: 3px;
+            transition: all 0.3s ease;
         }
 
         nav ul {
@@ -680,7 +705,7 @@
             background: var(--accent);
         }
 
-        /* Skills Section */
+        /* Skills Section - Updated for 2 rows of 4 columns */
         .skills {
             padding: 6rem 0;
             background: var(--dark);
@@ -688,7 +713,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -1215,12 +1240,46 @@
                 grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
                 gap: 2rem;
             }
+            
+            /* Skills grid for tablet */
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr; /* Single column on mobile */
                 gap: 1.5rem;
+            }
+            
+            /* Mobile Navigation */
+            .nav-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            /* Skills grid for mobile */
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1246,7 +1305,15 @@
                 </svg>
                 <span class="logo-text">Paulo's Lab</span>
             </a>
-            <ul>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -1309,7 +1376,7 @@
                 </div>
                 <div class="about-text">
                     <h2>About Paulo's Lab</h2>
-                    <p>Paulo's Lab is a professional software development and SEO agency based in Mombasa, Kenya, specializing in creating innovative software solutions for businesses of all sizes. With years of experience in software engineering and digital marketing, we understand the unique challenges facing modern businesses in Kenya and across Africa.</p>
+                    <p>Paulo's Lab is a professional software development and SEO agency specializing in creating innovative software solutions for businesses worldwide. With years of experience in software engineering and digital marketing, we understand the unique challenges facing modern businesses in today's global market.</p>
                     <p>We believe that great software should be accessible to everyone. Whether you're a startup looking to build your first mobile app, an established business needing custom enterprise software, or an e-commerce store wanting to improve your search engine rankings, we have the expertise to bring your vision to life.</p>
                     <p>Our approach combines technical excellence with strategic thinking. We don't just write code – we solve business problems. Every project begins with understanding your goals, your audience, and your market. Then we craft software solutions and SEO strategies that deliver measurable results and real business value.</p>
                     <p>From Android and iOS mobile applications to complex web platforms and desktop software, we leverage modern technologies and best practices to build scalable, secure, and user-friendly solutions that grow with your business.</p>
@@ -1369,7 +1436,7 @@
                     <ul class="service-features">
                         <li>Technical SEO Audits</li>
                         <li>On-Page Optimization</li>
-                        <li>Local SEO for Kenya Businesses</li>
+                        <li>Local & International SEO</li>
                         <li>Content Strategy & Marketing</li>
                         <li>Analytics & Reporting</li>
                     </ul>
@@ -1611,7 +1678,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Updated for 2 rows of 4 columns -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Technologies & Expertise</h2>
@@ -2021,7 +2088,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Paulo's Lab</h3>
-                    <p>Professional software development and SEO services in Mombasa, Kenya. We build custom mobile apps, web applications, desktop software, and provide strategic SEO solutions for businesses across Africa.</p>
+                    <p>Professional software development and SEO services. We build custom mobile apps, web applications, desktop software, and provide strategic SEO solutions for businesses worldwide.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
@@ -2056,7 +2123,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Paulo's Lab. All rights reserved. | Software Development & SEO Services in Kenya</p>
+                <p>&copy; 2025 Paulo's Lab. All rights reserved. | Software Development & SEO Services</p>
             </div>
         </div>
     </footer>
@@ -2064,6 +2131,24 @@
     <script>
         // Simple and reliable smooth scrolling
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation Toggle
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // Toggle hamburger animation
+                const spans = navToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
             // Smooth scrolling for navigation links
             document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -2375,7 +2460,7 @@
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
                 "name": "Paulo's Lab",
-                "description": "Professional Software Development & SEO Services in Kenya",
+                "description": "Professional Software Development & SEO Services",
                 "url": "https://pauloslab.com",
                 "telephone": "+254715875933",
                 "email": "info@pauloslab.com",
@@ -2386,7 +2471,7 @@
                     "addressRegion": "Mombasa",
                     "addressCountry": "Kenya"
                 },
-                "areaServed": ["Kenya", "East Africa"],
+                "areaServed": "Worldwide",
                 "serviceType": [
                     "Software Development",
                     "SEO Services", 
