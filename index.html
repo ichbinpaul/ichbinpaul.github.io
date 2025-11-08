@@ -984,30 +984,22 @@
             text-align: center;
         }
 
-        .contact-info {
+        .contact-form {
+            background: var(--dark-light);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
             margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
+        .contact-form h3 {
+            text-align: center;
             color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
         /* WhatsApp Floating Button */
@@ -1205,6 +1197,10 @@
             }
 
             .feedback-form {
+                padding: 2rem;
+            }
+
+            .contact-form {
                 padding: 2rem;
             }
         }
@@ -1967,24 +1963,28 @@
                 Ready to start your next software project? Let's collaborate and bring your vision to life.
             </p>
             <p style="font-size: 1rem; color: var(--text-dim); max-width: 700px; margin: 0 auto;">
-                Whether you need a mobile app, web application, desktop software, or want to improve your SEO rankings, Paulo's Lab is here to help. Contact us today for a free consultation and let's discuss how we can help your business grow.
+                Whether you need a mobile app, web application, desktop software, or want to improve your SEO rankings, Paulo's Lab is here to help. Contact us today for a free consultation.
             </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 2rem;">📧</span>
-                    <strong style="color: var(--text); margin-bottom: 0.3rem;">Email Us</strong>
-                    <a href="mailto:paulfx254@gmail.com">paulfx254@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 2rem;">📱</span>
-                    <strong style="color: var(--text); margin-bottom: 0.3rem;">Call or Text</strong>
-                    <a href="tel:+254715875933">+254 715 875 933</a>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 2rem;">📍</span>
-                    <strong style="color: var(--text); margin-bottom: 0.3rem;">Location</strong>
-                    <span style="color: var(--text-dim);">Mombasa, Kenya</span>
-                </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form action="https://formspree.io/f/xyzlgejp" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Your Name *</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email *</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message *</label>
+                        <textarea id="contactMessage" name="message" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -2022,14 +2022,15 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>Email: paulfx254@gmail.com</p>
+                    <p>Business Inquiries: <a href="mailto:info@pauloslab.com">info@pauloslab.com</a></p>
+                    <p>Client Support: <a href="mailto:support@pauloslab.com">support@pauloslab.com</a></p>
                     <p>Phone: +254 715 875 933</p>
-                    <p>Location: Mombasa, Kenya</p>
+                    <p>Location: Links Road, Nyali, Mombasa, Kenya</p>
                     
                     <h3 style="margin-top: 1.5rem;">Newsletter</h3>
                     <p>Subscribe to get updates on our latest projects and services</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <form action="https://formspree.io/f/xvgdpkrn" method="POST" class="newsletter-form" id="newsletterForm">
+                        <input type="email" name="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
                 </div>
@@ -2275,29 +2276,94 @@
                 ratingInput.value = 5;
             });
 
-            // Newsletter form submission
-            const newsletterForm = document.getElementById('newsletterForm');
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                
-                // In a real implementation, you would send this to a newsletter service
-                alert(`Thank you for subscribing with ${email}! You'll receive updates from Paulo's Lab.`);
-                this.reset();
-            });
+            // Contact Form Submission with Formspree
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    try {
+                        const formData = new FormData(this);
+                        const response = await fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            alert('Thank you for your message! We\'ll get back to you soon.');
+                            this.reset();
+                        } else {
+                            alert('There was a problem sending your message. Please try again or email us directly.');
+                        }
+                    } catch (error) {
+                        alert('There was a problem sending your message. Please try again or email us directly.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                    }
+                });
+            }
 
-            // Additional SEO script for pauloslab.com (UPDATED DOMAIN)
+            // Newsletter Form Submission with Formspree
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Subscribing...';
+                    
+                    try {
+                        const formData = new FormData(this);
+                        const response = await fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            alert('Thank you for subscribing! You\'ll receive updates from Paulo\'s Lab.');
+                            this.reset();
+                        } else {
+                            alert('There was a problem with your subscription. Please try again.');
+                        }
+                    } catch (error) {
+                        alert('There was a problem with your subscription. Please try again.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                    }
+                });
+            }
+
+            // Additional SEO script for pauloslab.com
             const structuredData = {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
                 "name": "Paulo's Lab",
                 "description": "Professional Software Development & SEO Services in Kenya",
-                "url": "https://pauloslab.com", // UPDATED
+                "url": "https://pauloslab.com",
                 "telephone": "+254715875933",
                 "email": "info@pauloslab.com",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Mombasa",
+                    "streetAddress": "Links Road",
+                    "addressLocality": "Nyali",
+                    "addressRegion": "Mombasa",
                     "addressCountry": "Kenya"
                 },
                 "areaServed": ["Kenya", "East Africa"],
