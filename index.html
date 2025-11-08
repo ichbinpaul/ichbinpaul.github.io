@@ -1040,7 +1040,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1.5fr; /* Three equal columns with first and last getting more space */
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* 4 columns with first and last being wider */
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -1058,6 +1058,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .footer-section a:hover {
@@ -1068,7 +1069,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
-            margin-top: 1rem;
+            margin: 1rem 0 1.5rem 0;
         }
 
         .newsletter-input {
@@ -1210,7 +1211,7 @@
             }
 
             .footer-content {
-                grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+                grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
                 gap: 2rem;
             }
         }
@@ -2030,18 +2031,25 @@
                     <a href="#services">Cloud Solutions</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Business Inquiries: <a href="mailto:info@pauloslab.com">info@pauloslab.com</a></p>
-                    <p>Client Support: <a href="mailto:support@pauloslab.com">support@pauloslab.com</a></p>
-                    <p>Phone: +254 715 875 933</p>
-                    <p>Location: Links Road, Nyali, Mombasa, Kenya</p>
-                    
-                    <h3 style="margin-top: 1.5rem;">Newsletter</h3>
+                    <h3>Company</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#featured-projects">Projects</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
                     <p>Subscribe to get updates on our latest projects and services</p>
                     <form action="https://formspree.io/f/xvgdpkrn" method="POST" class="newsletter-form" id="newsletterForm">
                         <input type="email" name="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
+                    
+                    <h3 style="margin-top: 1.5rem;">Contact Info</h3>
+                    <p>Business: <a href="mailto:info@pauloslab.com">info@pauloslab.com</a></p>
+                    <p>Support: <a href="mailto:support@pauloslab.com">support@pauloslab.com</a></p>
+                    <p>Phone: +254 715 875 933</p>
                 </div>
             </div>
             <div class="footer-bottom">
