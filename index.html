@@ -1040,15 +1040,16 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* 4 columns with first and last being wider */
-            gap: 2rem;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr; /* 5 columns with first being wider */
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
         .footer-section h3 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .footer-section p,
@@ -1056,9 +1057,9 @@
             color: var(--text-dim);
             text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
         }
 
         .footer-section a:hover {
@@ -1068,17 +1069,17 @@
         .newsletter-form {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-            margin: 1rem 0 1.5rem 0;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
         }
 
         .newsletter-input {
-            padding: 0.7rem 1rem;
+            padding: 0.6rem 0.8rem;
             background: var(--dark-light);
             border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 8px;
+            border-radius: 6px;
             color: var(--text);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             width: 100%;
         }
 
@@ -1088,15 +1089,15 @@
         }
 
         .newsletter-btn {
-            padding: 0.7rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             background: var(--primary);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background 0.3s;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .newsletter-btn:hover {
@@ -1108,7 +1109,7 @@
             padding-top: 2rem;
             border-top: 1px solid rgba(139, 92, 246, 0.2);
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         /* Animations */
@@ -2039,17 +2040,19 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Business: <a href="mailto:info@pauloslab.com">info@pauloslab.com</a></p>
+                    <p>Support: <a href="mailto:support@pauloslab.com">support@pauloslab.com</a></p>
+                    <p>Phone: +254 715 875 933</p>
+                    <p>Location: Links Road, Nyali, Mombasa, Kenya</p>
+                </div>
+                <div class="footer-section">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to get updates on our latest projects and services</p>
+                    <p>Subscribe for updates on our latest projects and services</p>
                     <form action="https://formspree.io/f/xvgdpkrn" method="POST" class="newsletter-form" id="newsletterForm">
                         <input type="email" name="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
-                    
-                    <h3 style="margin-top: 1.5rem;">Contact Info</h3>
-                    <p>Business: <a href="mailto:info@pauloslab.com">info@pauloslab.com</a></p>
-                    <p>Support: <a href="mailto:support@pauloslab.com">support@pauloslab.com</a></p>
-                    <p>Phone: +254 715 875 933</p>
                 </div>
             </div>
             <div class="footer-bottom">
